@@ -1,16 +1,11 @@
-import { useParams } from 'react-router-dom';
-import { authors } from '../data';
+import { useOutletContext } from 'react-router-dom';
 
 export default function BookCharacters() {
-  const { name, book } = useParams();
-  const author = authors.find(a => a.name === name);
-  const bookData = author?.books.find(b => b.title === book);
-
-  if (!bookData) return <div>Book not found</div>;
+  const { bookData } = useOutletContext();
 
   return (
     <div>
-      <h1>{bookData.title} - Characters</h1>
+      <h3>Characters</h3>
       <ul>
         {bookData.characters.map((character) => (
           <li key={character}>{character}</li>

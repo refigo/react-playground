@@ -23,18 +23,22 @@ export const router = createBrowserRouter([
       {
         path: 'author/:name',
         element: <AuthorDetail />,
-      },
-      {
-        path: 'author/:name/:book',
-        element: <BookDetail />,
-      },
-      {
-        path: 'author/:name/:book/chapters',
-        element: <BookChapters />,
-      },
-      {
-        path: 'author/:name/:book/characters',
-        element: <BookCharacters />,
+        children: [
+          {
+            path: ':book',
+            element: <BookDetail />,
+            children: [
+              {
+                path: 'chapters',
+                element: <BookChapters />,
+              },
+              {
+                path: 'characters',
+                element: <BookCharacters />,
+              },
+            ],
+          },
+        ],
       },
     ],
   },

@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import { authors } from '../data';
 
 export default function AuthorDetail() {
@@ -14,10 +14,13 @@ export default function AuthorDetail() {
       <ul>
         {author.books.map((book) => (
           <li key={book.title}>
-            <Link to={`/author/${author.name}/${book.title}`}>{book.title}</Link>
+            <Link to={book.title}>{book.title}</Link>
           </li>
         ))}
       </ul>
+      <div style={{ marginTop: '20px' }}>
+        <Outlet context={{ author }} />
+      </div>
     </div>
   );
 }
