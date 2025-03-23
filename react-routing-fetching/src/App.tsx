@@ -1,29 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from './pages/Home';
 import CharacterDetail from './pages/CharacterDetail';
-import GlobalStyle from './styles/GlobalStyle';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
-function App(): React.ReactElement {
+// Debug component to log route changes
+const RouteLogger = () => {
+  const location = useLocation();
+  React.useEffect(() => {
+    console.log('Current route:', location.pathname);
+  }, [location]);
+  return null;
+};
+
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GlobalStyle />
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/character/:id" component={CharacterDetail} />
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <RouteLogger />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/character/:id" element={<CharacterDetail />} />
+          <Route path="*" element={<div>404 - Not Found</div>} />
+        </Routes>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

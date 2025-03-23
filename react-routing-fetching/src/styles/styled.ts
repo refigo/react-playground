@@ -15,29 +15,24 @@ export const CharacterGrid = styled.div`
 `;
 
 export const CharacterCard = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  background: white;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.2s;
+  display: block;
 
   &:hover {
     transform: translateY(-5px);
   }
 `;
 
-export const CharacterImage = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-`;
-
-export const CharacterName = styled.h3`
+export const CharacterName = styled.h2`
+  font-size: 1.2rem;
   margin: 10px;
   text-align: center;
-  font-size: 1.2rem;
 `;
 
 export const DetailContainer = styled.div`
@@ -45,19 +40,14 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-`;
-
-export const DetailImage = styled.img`
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  background-color: white;
   border-radius: 8px;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
 export const DetailInfo = styled.div`
   text-align: center;
-  max-width: 600px;
+  margin-top: 20px;
 
   h1 {
     margin-bottom: 10px;
@@ -65,6 +55,6 @@ export const DetailInfo = styled.div`
 
   p {
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 `;
