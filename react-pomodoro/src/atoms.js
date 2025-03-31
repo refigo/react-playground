@@ -15,6 +15,16 @@ export const totalRoundsState = atom({
   default: 4,
 });
 
+export const goalState = atom({
+  key: 'goalState',
+  default: 0,
+});
+
+export const totalGoalsState = atom({
+  key: 'totalGoalsState',
+  default: 12,
+});
+
 export const isRunningState = atom({
   key: 'isRunningState',
   default: false,

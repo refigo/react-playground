@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { motion, AnimatePresence } from 'framer-motion';
-import { timerState, roundState, totalRoundsState, isRunningState } from '../atoms';
+import { timerState, roundState, totalRoundsState, goalState, totalGoalsState, isRunningState } from '../atoms';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -36,15 +36,19 @@ const Button = styled.button`
   }
 `;
 
-const RoundDisplay = styled.div`
+const StatsDisplay = styled.div`
   font-size: 1.5rem;
   margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
 `;
 
 const Pomodoro = () => {
   const [timer, setTimer] = useRecoilState(timerState);
   const [round, setRound] = useRecoilState(roundState);
   const [totalRounds] = useRecoilState(totalRoundsState);
+  const [goal, setGoal] = useRecoilState(goalState);
+  const [totalGoals] = useRecoilState(totalGoalsState);
   const [isRunning, setIsRunning] = useRecoilState(isRunningState);
 
   useEffect(() => {
@@ -54,13 +58,20 @@ const Pomodoro = () => {
         setTimer((prev) => prev - 1);
       }, 1000);
     } else if (timer === 0) {
-      setRound((prev) => prev + 1);
+      setRound((prev) => {
+        const newRound = prev + 1;
+        if (newRound >= totalRounds) {
+          setGoal((prevGoal) => prevGoal + 1);
+          return 0;
+        }
+        return newRound;
+      });
       setTimer(25 * 60);
       setIsRunning(false);
     }
 
     return () => clearInterval(interval);
-  }, [isRunning, timer, setTimer, setRound, setIsRunning]);
+  }, [isRunning, timer, setTimer, setRound, setGoal, totalRounds]);
 
   const toggleTimer = () => {
     setIsRunning((prev) => !prev);
@@ -70,6 +81,7 @@ const Pomodoro = () => {
     setTimer(25 * 60);
     setIsRunning(false);
     setRound(0);
+    setGoal(0);
   };
 
   const formatTime = (seconds) => {
@@ -99,9 +111,10 @@ const Pomodoro = () => {
         <Button onClick={resetTimer}>Reset</Button>
       </div>
 
-      <RoundDisplay>
-        Round: {round}/{totalRounds}
-      </RoundDisplay>
+      <StatsDisplay>
+        <div>Round: {round}/{totalRounds}</div>
+        <div>Goal: {goal}/{totalGoals}</div>
+      </StatsDisplay>
     </Container>
   );
 };
