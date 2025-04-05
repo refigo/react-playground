@@ -24,7 +24,7 @@ const Banner = styled.div`
   justify-content: center;
   padding: 60px;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
-    url(${(props) => props.bgPhoto});
+    url(${(props) => props.$bgPhoto});
   background-size: cover;
 `;
 
@@ -49,7 +49,7 @@ const Grid = styled.div`
 const Box = styled(motion.div)`
   background-color: white;
   height: 300px;
-  background-image: url(${(props) => props.bgPhoto});
+  background-image: url(${(props) => props.$bgPhoto});
   background-size: cover;
   background-position: center center;
   border-radius: 5px;
@@ -95,7 +95,7 @@ function Home() {
       ) : (
         <>
           <Banner
-            bgPhoto={makeImagePath(data?.results[0].backdrop_path || "")}
+            $bgPhoto={makeImagePath(data?.results[0].backdrop_path || "")}
           >
             <Title>{data?.results[0].title}</Title>
             <Overview>{data?.results[0].overview}</Overview>
@@ -109,7 +109,7 @@ function Home() {
                 initial="normal"
                 variants={boxVariants}
                 onClick={() => onBoxClicked(movie)}
-                bgPhoto={makeImagePath(movie.poster_path)}
+                $bgPhoto={makeImagePath(movie.poster_path)}
               />
             ))}
           </Grid>

@@ -27,7 +27,7 @@ const Grid = styled.div`
 const Box = styled(motion.div)`
   background-color: white;
   height: 300px;
-  background-image: url(${(props) => props.bgPhoto});
+  background-image: url(${(props) => props.$bgPhoto});
   background-size: cover;
   background-position: center center;
   border-radius: 5px;
@@ -80,7 +80,7 @@ function ComingSoon() {
                 initial="normal"
                 variants={boxVariants}
                 onClick={() => onBoxClicked(movie)}
-                bgPhoto={makeImagePath(movie.poster_path)}
+                $bgPhoto={makeImagePath(movie.poster_path)}
               />
             ))}
           </Grid>
