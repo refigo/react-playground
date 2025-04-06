@@ -13,7 +13,6 @@ const Nav = styled(motion.nav)`
   padding: 20px 60px;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
-  backdrop-filter: blur(5px);
   z-index: 99;
 `;
 

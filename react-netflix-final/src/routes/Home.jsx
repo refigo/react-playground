@@ -8,6 +8,10 @@ import MovieModal from '../components/MovieModal';
 const Wrapper = styled.div`
   background: black;
   padding-top: 80px;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Loader = styled.div`
@@ -46,6 +50,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   /* max-width: 1400px; */
   gap: 20px;
+  width: 100%;
 `;
 
 const Box = styled(motion.div)`
