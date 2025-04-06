@@ -8,6 +8,17 @@ import MovieModal from '../components/MovieModal';
 const Wrapper = styled.div`
   background: black;
   padding-top: 80px;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Loader = styled.div`
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Title = styled.h2`
@@ -22,6 +33,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+  width: 100%;
 `;
 
 const Box = styled(motion.div)`
@@ -48,7 +60,7 @@ const boxVariants = {
     scale: 1.3,
     y: -50,
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       duration: 0.3,
       type: "tween",
     },
@@ -68,31 +80,33 @@ function ComingSoon() {
 
   return (
     <Wrapper>
-      <Title>Coming Soon</Title>
-      {!isLoading && (
-        <>
-          <Grid>
-            {data?.results.map((movie) => (
-              <Box
-                layoutId={movie.id + ""}
-                key={movie.id}
-                whileHover="hover"
-                initial="normal"
-                variants={boxVariants}
-                onClick={() => onBoxClicked(movie)}
-                $bgPhoto={makeImagePath(movie.poster_path)}
-              />
-            ))}
-          </Grid>
-          <AnimatePresence mode="wait">
-            {selectedMovie && (
-              <MovieModal
-                movie={selectedMovie}
-                onClose={() => setSelectedMovie(null)}
-              />
-            )}
-          </AnimatePresence>
-        </>
+      {isLoading ? (
+        <Loader>Loading...</Loader>
+      ) : (
+          <>
+            <Title>Coming Soon</Title>
+            <Grid>
+              {data?.results.map((movie) => (
+                <Box
+                  layoutId={movie.id + ""}
+                  key={movie.id}
+                  whileHover="hover"
+                  initial="normal"
+                  variants={boxVariants}
+                  onClick={() => onBoxClicked(movie)}
+                  $bgPhoto={makeImagePath(movie.poster_path)}
+                />
+              ))}
+            </Grid>
+            <AnimatePresence mode="wait">
+              {selectedMovie && (
+                <MovieModal
+                  movie={selectedMovie}
+                  onClose={() => setSelectedMovie(null)}
+                />
+              )}
+            </AnimatePresence>
+          </>
       )}
     </Wrapper>
   );

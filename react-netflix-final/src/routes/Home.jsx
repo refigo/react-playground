@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { getPopular, makeImagePath } from '../api';
+import { getPopular, makeBgPath, makeImagePath } from '../api';
 import MovieModal from '../components/MovieModal';
 
 const Wrapper = styled.div`
@@ -43,6 +43,7 @@ const Grid = styled.div`
   padding: 20px 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* max-width: 1400px; */
   gap: 20px;
 `;
 
@@ -70,7 +71,7 @@ const boxVariants = {
     scale: 1.3,
     y: -50,
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       duration: 0.3,
       type: "tween",
     },
@@ -95,13 +96,13 @@ function Home() {
       ) : (
         <>
           <Banner
-            $bgPhoto={makeImagePath(data?.results[0].backdrop_path || "")}
+            $bgPhoto={makeBgPath(data?.results[0].backdrop_path || "")}
           >
             <Title>{data?.results[0].title}</Title>
             <Overview>{data?.results[0].overview}</Overview>
           </Banner>
           <Grid>
-            {data?.results.slice(1).map((movie) => (
+            {data?.results.map((movie) => (
               <Box
                 layoutId={movie.id + ""}
                 key={movie.id}
