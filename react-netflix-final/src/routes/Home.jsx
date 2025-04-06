@@ -27,11 +27,16 @@ const Banner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 60px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
-    url(${(props) => props.$bgPhoto});
+  padding: 0 60px 120px 60px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 1) 100%
+  ), url(${(props) => props.$bgPhoto});
   background-size: cover;
-  background-position: center center;
+  background-position: center 25%;
 
   @media (max-width: 768px) {
     height: 80vh;
@@ -39,9 +44,18 @@ const Banner = styled.div`
   }
 `;
 
+const BannerContent = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+`;
+
 const Title = styled.h2`
-  margin-bottom: 20px;
-  font-size: 68px;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
 
   @media (max-width: 768px) {
     font-size: 36px;
@@ -50,8 +64,13 @@ const Title = styled.h2`
 `;
 
 const Overview = styled.p`
-  font-size: 30px;
+  font-size: 1.5rem;
   width: 50%;
+  line-height: 1.5;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  opacity: 0.9;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -61,6 +80,41 @@ const Overview = styled.p`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+`;
+
+const PlayButton = styled(motion.button)`
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 20px;
+    font-size: 1rem;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
 
@@ -133,8 +187,22 @@ function Home() {
           <Banner
             $bgPhoto={makeBgPath(data?.results[0].backdrop_path || "")}
           >
-            <Title>{data?.results[0].title}</Title>
-            <Overview>{data?.results[0].overview}</Overview>
+            <BannerContent>
+              <Title>{data?.results[0].title}</Title>
+              <Overview>{data?.results[0].overview}</Overview>
+              <PlayButton
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                Play Now
+              </PlayButton>
+            </BannerContent>
           </Banner>
           <Grid>
             {data?.results.map((movie) => (
