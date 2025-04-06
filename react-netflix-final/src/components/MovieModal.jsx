@@ -10,15 +10,14 @@ const Overlay = styled(motion.div)`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MovieBox = styled(motion.div)`
-  position: fixed;
   width: 40vw;
-  height: 80vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-height: 80vh;
   border-radius: 15px;
   overflow: hidden;
   background-color: ${(props) => props.theme.black.darker};
@@ -66,42 +65,44 @@ function MovieModal({ movie, onClose }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-      />
-      <MovieBox
-        layoutId={movie.id + ""}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ 
-          opacity: 1,
-          scale: 1,
-          transition: {
-            duration: 0.3,
-            type: "spring",
-            damping: 25,
-            stiffness: 200
-          }
-        }}
-        exit={{ 
-          opacity: 0,
-          scale: 0.5,
-          transition: {
-            duration: 0.3
-          }
-        }}
       >
-        <MovieImage
-          style={{
-            backgroundImage: `linear-gradient(to top, black, transparent), url(${makeBgPath(
-              movie.backdrop_path
-            )})`,
+        <MovieBox
+          layoutId={movie.id + ""}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ 
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 0.3,
+              type: "spring",
+              damping: 25,
+              stiffness: 200
+            }
           }}
-        />
-        <MovieTitle>{movie.title}</MovieTitle>
-        <MovieInfo>
-          <Overview>{movie.overview}</Overview>
-          <AdditionalInfo>Release Date: {movie.release_date}</AdditionalInfo>
-          <AdditionalInfo>Rating: ⭐️ {movie.vote_average.toFixed(1)}</AdditionalInfo>
-        </MovieInfo>
-      </MovieBox>
+          exit={{ 
+            opacity: 0,
+            scale: 0.5,
+            transition: {
+              duration: 0.3
+            }
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <MovieImage
+            style={{
+              backgroundImage: `linear-gradient(to top, black, transparent), url(${makeBgPath(
+                movie.backdrop_path
+              )})`,
+            }}
+          />
+          <MovieTitle>{movie.title}</MovieTitle>
+          <MovieInfo>
+            <Overview>{movie.overview}</Overview>
+            <AdditionalInfo>Release Date: {movie.release_date}</AdditionalInfo>
+            <AdditionalInfo>Rating: ⭐️ {movie.vote_average.toFixed(1)}</AdditionalInfo>
+          </MovieInfo>
+        </MovieBox>
+      </Overlay>
     </>
   );
 }
