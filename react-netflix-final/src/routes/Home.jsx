@@ -26,31 +26,56 @@ const Banner = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 60px;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url(${(props) => props.$bgPhoto});
   background-size: cover;
+  background-position: center center;
+
+  @media (max-width: 768px) {
+    height: 80vh;
+    padding: 40px 20px;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 68px;
   margin-bottom: 20px;
+  font-size: 68px;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
 `;
 
 const Overview = styled.p`
   font-size: 30px;
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const Grid = styled.div`
   margin-top: 20px;
-  padding: 20px 60px;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  /* max-width: 1400px; */
   gap: 20px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 20px 30px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 `;
 
 const Box = styled(motion.div)`
@@ -66,6 +91,10 @@ const Box = styled(motion.div)`
   }
   &:last-child {
     transform-origin: center right;
+  }
+
+  @media (max-width: 768px) {
+    height: 225px;
   }
 `;
 
