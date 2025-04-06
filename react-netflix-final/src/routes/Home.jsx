@@ -113,7 +113,7 @@ function Home() {
               />
             ))}
           </Grid>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {selectedMovie && (
               <MovieModal
                 movie={selectedMovie}

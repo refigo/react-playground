@@ -8,8 +8,7 @@ const Overlay = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 99;
 `;
 
@@ -17,12 +16,12 @@ const MovieBox = styled(motion.div)`
   position: fixed;
   width: 40vw;
   height: 80vh;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 15px;
   overflow: hidden;
-  background-color: ${(props) => props.theme.black.lighter};
+  background-color: ${(props) => props.theme.black.darker};
   z-index: 100;
 `;
 
@@ -49,8 +48,14 @@ const MovieInfo = styled.div`
 `;
 
 const Overview = styled.p`
-  color: ${(props) => props.theme.white.lighter};
+  color: ${(props) => props.theme.white.darker};
   line-height: 1.5;
+  margin-bottom: 20px;
+`;
+
+const AdditionalInfo = styled.p`
+  color: ${(props) => props.theme.white.darker};
+  margin-top: 10px;
 `;
 
 function MovieModal({ movie, onClose }) {
@@ -58,13 +63,29 @@ function MovieModal({ movie, onClose }) {
     <>
       <Overlay
         onClick={onClose}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       />
       <MovieBox
         layoutId={movie.id + ""}
-        style={{
-          top: window.scrollY + 100,
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ 
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 0.3,
+            type: "spring",
+            damping: 25,
+            stiffness: 200
+          }
+        }}
+        exit={{ 
+          opacity: 0,
+          scale: 0.5,
+          transition: {
+            duration: 0.3
+          }
         }}
       >
         <MovieImage
@@ -77,12 +98,8 @@ function MovieModal({ movie, onClose }) {
         <MovieTitle>{movie.title}</MovieTitle>
         <MovieInfo>
           <Overview>{movie.overview}</Overview>
-          <p style={{ marginTop: 20, color: '#fff' }}>
-            Release Date: {movie.release_date}
-          </p>
-          <p style={{ marginTop: 10, color: '#fff' }}>
-            Rating: ⭐️ {movie.vote_average.toFixed(1)}
-          </p>
+          <AdditionalInfo>Release Date: {movie.release_date}</AdditionalInfo>
+          <AdditionalInfo>Rating: ⭐️ {movie.vote_average.toFixed(1)}</AdditionalInfo>
         </MovieInfo>
       </MovieBox>
     </>

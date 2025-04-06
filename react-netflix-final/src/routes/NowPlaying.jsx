@@ -84,7 +84,7 @@ function NowPlaying() {
               />
             ))}
           </Grid>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {selectedMovie && (
               <MovieModal
                 movie={selectedMovie}

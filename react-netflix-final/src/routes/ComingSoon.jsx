@@ -84,7 +84,7 @@ function ComingSoon() {
               />
             ))}
           </Grid>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {selectedMovie && (
               <MovieModal
                 movie={selectedMovie}
