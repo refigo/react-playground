@@ -7,105 +7,104 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
 <body>
-  <div class="bg-yellow-300 w-80 rounded-3xl p-8 shadow-xl">
-    <h2 class="text-black font-bold text-xl mb-2">Select Destination</h2>
-    <div class="w-full h-0.5 bg-black/10 mb-6"></div>
-    
-    <ul class="space-y-5">
-      <!-- Vancouver -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">Vancouver</span>
-      </li>
+  <div class="flex min-h-screen items-center justify-center bg-gray-100">
+    <div class="bg-yellow-300 w-80 rounded-3xl p-8 shadow-xl">
+      <h2 class="text-black font-bold text-sm mb-2">Select Destination</h2>
+      <div class="w-full h-0.5 bg-black/60 mb-6"></div>
       
-      <!-- Seattle (first) -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">Seattle</span>
-      </li>
-      
-      <!-- Portland -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">Portland</span>
-      </li>
-      
-      <!-- Seattle (duplicate) -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">Seattle</span>
-      </li>
-      
-      <!-- San Francisco (selected) -->
-      <li class="flex items-center cursor-pointer group rounded-full pl-2 pr-4 py-1 transition-all hover:pl-3">
-        <span
-          class="bg-white border border-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-        </span>
-        <span class="text-white text-2xl font-bold group-hover:translate-x-1 transition-transform">San Francisco</span>
-      </li>
-      
-      <!-- Los Angeles -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">Los Angeles</span>
-      </li>
-      
-      <!-- San Diego -->
-      <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
-        <span
-          class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-        >
-          <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        </span>
-        <span class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform">San Diego</span>
-      </li>
-    </ul>
+      <ul class="space-y-5">
+        <!-- Vancouver -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">Vancouver</span>
+        </li>
+        
+        <!-- Seattle (first) -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">Seattle</span>
+        </li>
+        
+        <!-- Portland -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">Portland</span>
+        </li>
+        
+        <!-- Seattle (duplicate) -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">Seattle</span>
+        </li>
+        
+        <!-- San Francisco (selected) -->
+        <li class="flex items-center cursor-pointer group rounded-full py-1 transition-all hover:pl-3">
+          <span
+            class="bg-white border border-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </span>
+          <span class="text-white text-3xl font-bold group-hover:translate-x-1 transition-transform">San Francisco</span>
+        </li>
+        
+        <!-- Los Angeles -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">Los Angeles</span>
+        </li>
+        
+        <!-- San Diego -->
+        <li class="flex items-center cursor-pointer group transition-all hover:pl-1">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </span>
+          <span class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform">San Diego</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>

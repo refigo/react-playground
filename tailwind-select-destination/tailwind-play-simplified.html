@@ -1,95 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Destination - Tailwind Play Simplified</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
 <!-- 
   Tailwind Play version - Use class attribute
   Uses Hero icons from https://heroicons.dev/
 -->
 
-<div class="bg-yellow-300 w-80 rounded-3xl p-8 shadow-xl mx-auto my-8">
-  <h2 class="text-black font-bold text-xl mb-2">Select Destination</h2>
-  <div class="w-full h-0.5 bg-black/10 mb-6"></div>
+<body>
+  <div class="flex min-h-screen items-center justify-center bg-gray-100">
+    <div class="bg-yellow-300 w-80 rounded-3xl p-8 shadow-xl mx-auto my-8">
+      <h2 class="text-black font-bold text-sm mb-2">Select Destination</h2>
+      <div class="w-full h-0.5 bg-black/60 mb-6"></div>
   
-  <ul class="space-y-5">
-    <!-- Vancouver -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">v</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >Vancouver</span>
-    </li>
-    
-    <!-- Seattle (first) -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">s</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >Seattle</span>
-    </li>
-    
-    <!-- Portland -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">p</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >Portland</span>
-    </li>
-    
-    <!-- Seattle (duplicate) -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">s</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >Seattle</span>
-    </li>
-    
-    <!-- San Francisco (selected) -->
-    <li class="flex items-center cursor-pointer group rounded-full pl-2 pr-4 py-1 hover:pl-3 transition-all duration-200">
-      <span
-        class="bg-white border border-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">s</span>
-      </span>
-      <span
-        class="text-white text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >San Francisco</span>
-    </li>
-    
-    <!-- Los Angeles -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">l</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >Los Angeles</span>
-    </li>
-    
-    <!-- San Diego -->
-    <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
-      <span
-        class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
-      >
-        <span class="text-yellow-300">s</span>
-      </span>
-      <span
-        class="text-black text-2xl font-bold group-hover:translate-x-1 transition-transform"
-      >San Diego</span>
-    </li>
-  </ul>
-</div>
+      <ul class="space-y-5">
+        <!-- Vancouver -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">v</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >Vancouver</span>
+        </li>
+        
+        <!-- Seattle (first) -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">s</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >Seattle</span>
+        </li>
+        
+        <!-- Portland -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">p</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >Portland</span>
+        </li>
+        
+        <!-- Seattle (duplicate) -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">s</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >Seattle</span>
+        </li>
+        
+        <!-- San Francisco (selected) -->
+        <li class="flex items-center cursor-pointer group rounded-full py-1 hover:pl-3 transition-all duration-200">
+          <span
+            class="bg-white border border-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">s</span>
+          </span>
+          <span
+            class="text-white text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >San Francisco</span>
+        </li>
+        
+        <!-- Los Angeles -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">l</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >Los Angeles</span>
+        </li>
+        
+        <!-- San Diego -->
+        <li class="flex items-center cursor-pointer group hover:pl-1 transition-all duration-200">
+          <span
+            class="bg-black w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-yellow-300">s</span>
+          </span>
+          <span
+            class="text-black text-3xl font-bold group-hover:translate-x-1 transition-transform"
+          >San Diego</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
