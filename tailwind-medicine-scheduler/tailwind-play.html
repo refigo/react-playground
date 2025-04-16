@@ -1,0 +1,77 @@
+<!-- 
+This version is optimized for Tailwind Play
+Uses 'class' instead of 'className'
+No need for script imports as Tailwind Play provides them
+-->
+<div class="flex min-h-screen items-center justify-center bg-orange-500 p-4">
+  <div class="w-full max-w-md rounded-3xl bg-white p-6 shadow-lg">
+    <!-- Month selector -->
+    <div class="flex items-center justify-between border-b border-gray-200 pb-4">
+      <div class="flex items-center text-gray-800">
+        <span class="text-lg font-medium">March 2021</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Greeting section -->
+    <div class="mt-6 text-center">
+      <h1 class="text-xl font-medium text-gray-800">Hello, Bruno!</h1>
+      <p class="text-gray-700">Your medicines for today</p>
+    </div>
+
+    <!-- Date selector -->
+    <div class="mt-6 flex justify-between">
+      <div class="flex flex-col items-center">
+        <div class="text-xl font-medium text-gray-800">16</div>
+        <div class="text-sm text-gray-600">Mon</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-xl font-medium text-gray-800">17</div>
+        <div class="text-sm text-gray-600">Tue</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="rounded-full bg-blue-500 px-4 py-2 text-white">
+          <div class="text-xl font-medium">18</div>
+          <div class="text-sm">Wed</div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-xl font-medium text-gray-800">19</div>
+        <div class="text-sm text-gray-600">Thu</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-xl font-medium text-gray-800">20</div>
+        <div class="text-sm text-gray-600">Fri</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-xl font-medium text-gray-800">21</div>
+        <div class="text-sm text-gray-600">Sat</div>
+      </div>
+    </div>
+
+    <!-- Medicine cards -->
+    <div class="mt-8 space-y-4">
+      <!-- Nora-BE Card -->
+      <div class="flex overflow-hidden rounded-lg">
+        <div class="flex-grow rounded-l-lg bg-yellow-200 p-4">
+          <div class="mb-1 text-lg font-medium">Nora – BE</div>
+          <div class="text-sm text-gray-700">Norenthindrone – 0.35mg</div>
+          <div class="mt-16 text-sm">7h30AM</div>
+        </div>
+        <div class="flex w-16 items-center justify-center rounded-r-lg bg-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Feosol Card -->
+      <div class="rounded-lg bg-green-400 p-4">
+        <div class="mb-1 text-lg font-medium">Feosol</div>
+        <div class="text-sm text-gray-700">Ferrous Sulfate – 600mg</div>
+      </div>
+    </div>
+  </div>
+</div>
