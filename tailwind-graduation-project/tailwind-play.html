@@ -1,0 +1,279 @@
+<!-- 
+This file is optimized for Tailwind Play.
+Instructions:
+1. Copy all the content of this file
+2. Go to https://play.tailwindcss.com/
+3. Paste the content and you'll see the design
+-->
+
+<div class="flex min-h-screen items-center justify-center bg-pink-50 p-4">
+  <!-- Weather Panel -->
+  <div class="mx-2 w-80 rounded-3xl bg-white p-8">
+    <h2 class="mb-6 text-3xl font-bold text-gray-900">Weather</h2>
+    
+    <!-- Weather Cards -->
+    <div class="space-y-4">
+      <!-- Casius -->
+      <div class="rounded-xl border border-gray-200 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-gray-900">Casius</h3>
+            <p class="text-sm text-gray-500">Mars, 12AM</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- HeroIcon - Cloud -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 16l-7-7-7 7" />
+            </svg>
+            <span class="text-3xl font-bold">85°</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dlacria -->
+      <div class="rounded-xl bg-yellow-400 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-gray-900">Dlacria</h3>
+            <p class="text-sm text-gray-900">Mars, 12AM</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- HeroIcon - Cloud -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 16l-7-7-7 7" />
+            </svg>
+            <span class="text-3xl font-bold">85°</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- New York -->
+      <div class="rounded-xl bg-teal-400 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-gray-900">New York</h3>
+            <p class="text-sm text-gray-900">USA, 12AM</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- HeroIcon - Sun -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <span class="text-3xl font-bold">85°</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Zomato -->
+      <div class="rounded-xl bg-orange-500 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-white">Zomato</h3>
+            <p class="text-sm text-white">India, 12AM</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- HeroIcon - Cloud Rain -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+            <span class="text-3xl font-bold text-white">20°</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add Button -->
+    <div class="mt-6 flex justify-center">
+      <button class="rounded-full border border-gray-300 p-3 hover:bg-gray-100">
+        <!-- HeroIcon - Plus -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Designers Panel -->
+  <div class="mx-2 w-80 rounded-3xl bg-white p-8">
+    <!-- Close Button -->
+    <div class="mb-3 flex justify-end">
+      <button class="rounded-full border border-gray-300 p-2 hover:bg-gray-100">
+        <!-- HeroIcon - X -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Simple Tag -->
+    <div class="mb-3 text-center">
+      <span class="text-sm font-medium uppercase text-gray-500">SIMPLE TAG</span>
+    </div>
+    
+    <!-- Title -->
+    <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">Work with best designers</h2>
+    
+    <!-- Designer Cards Grid -->
+    <div class="mb-6 grid grid-cols-2 gap-4">
+      <!-- Yellow Card -->
+      <div class="flex h-32 items-center justify-center rounded-xl bg-yellow-400">
+        <!-- HeroIcon - Photo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      
+      <!-- Teal Card -->
+      <div class="flex h-32 items-center justify-center rounded-xl bg-teal-500">
+        <!-- HeroIcon - Photo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      
+      <!-- Pink Card -->
+      <div class="flex h-32 items-center justify-center rounded-xl bg-pink-400">
+        <!-- HeroIcon - Photo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      
+      <!-- Orange Card -->
+      <div class="flex h-32 items-center justify-center rounded-xl bg-orange-500">
+        <!-- HeroIcon - Photo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Action Button -->
+    <button class="w-full rounded-lg bg-blue-600 py-4 font-medium text-white hover:bg-blue-700">
+      Let' get it done
+    </button>
+  </div>
+  
+  <!-- Friends Panel -->
+  <div class="mx-2 w-80 rounded-3xl bg-yellow-400 p-8">
+    <!-- Back Button and Title -->
+    <div class="mb-6 flex items-center justify-between">
+      <button class="rounded-full border border-gray-900/20 bg-white p-2 hover:bg-gray-100">
+        <!-- HeroIcon - Chevron Left -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold text-gray-900">Friends</h2>
+      <div class="w-7"></div> <!-- Spacer to center the title -->
+    </div>
+    
+    <!-- Search Box -->
+    <div class="mb-6">
+      <div class="flex items-center rounded-lg bg-white p-2 shadow-sm">
+        <input type="text" placeholder="Search with love ..." class="flex-1 bg-transparent px-2 outline-none" />
+        <button class="rounded-md p-1 hover:bg-gray-100">
+          <!-- HeroIcon - Search -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Friends List -->
+    <div class="space-y-4">
+      <!-- Bill Rizer (1) -->
+      <div class="rounded-xl bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="h-12 w-12 overflow-hidden rounded-full bg-orange-100">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=billrizer1" alt="Bill Rizer" class="h-full w-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Bill Rizer</h3>
+              <p class="text-sm text-gray-500">Planet Designer</p>
+            </div>
+          </div>
+          <button class="rounded-lg bg-yellow-400 px-3 py-1 text-sm font-medium text-gray-900 hover:bg-yellow-500">
+            invite
+          </button>
+        </div>
+      </div>
+      
+      <!-- Genbei Yagy -->
+      <div class="rounded-xl bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="h-12 w-12 overflow-hidden rounded-full bg-teal-800">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=genbeiyagy" alt="Genbei Yagy" class="h-full w-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Genbei Yagy</h3>
+              <p class="text-sm text-gray-500">Planet Designer</p>
+            </div>
+          </div>
+          <button class="rounded-lg bg-yellow-400 px-3 py-1 text-sm font-medium text-gray-900 hover:bg-yellow-500">
+            invite
+          </button>
+        </div>
+      </div>
+      
+      <!-- Lancy Neo -->
+      <div class="rounded-xl bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="h-12 w-12 overflow-hidden rounded-full bg-orange-100">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=lancyneo" alt="Lancy Neo" class="h-full w-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Lancy Neo</h3>
+              <p class="text-sm text-gray-500">Rogue Corp</p>
+            </div>
+          </div>
+          <button class="rounded-lg bg-gray-900 px-3 py-1 text-sm font-medium text-white">
+            invited
+          </button>
+        </div>
+      </div>
+      
+      <!-- Bill Rizer (2) -->
+      <div class="rounded-xl bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="h-12 w-12 overflow-hidden rounded-full bg-yellow-200">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=billrizer2" alt="Bill Rizer" class="h-full w-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Bill Rizer</h3>
+              <p class="text-sm text-gray-500">Hard Corps</p>
+            </div>
+          </div>
+          <button class="rounded-lg bg-yellow-400 px-3 py-1 text-sm font-medium text-gray-900 hover:bg-yellow-500">
+            invite
+          </button>
+        </div>
+      </div>
+      
+      <!-- Konami -->
+      <div class="rounded-xl bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="h-12 w-12 overflow-hidden rounded-full bg-gray-800">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=konami" alt="Konami" class="h-full w-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Konami</h3>
+              <p class="text-sm text-gray-500">Xenon Creator</p>
+            </div>
+          </div>
+          <button class="rounded-lg bg-yellow-400 px-3 py-1 text-sm font-medium text-gray-900 hover:bg-yellow-500">
+            invite
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
